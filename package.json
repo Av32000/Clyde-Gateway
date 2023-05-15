@@ -1,0 +1,17 @@
+{
+  "name": "clyde-gateway",
+  "version": "1.0.0",
+  "description": "Simple and very small library to connect your bot to the discord gateway",
+  "main": "index.js",
+  "keywords": [
+    "gateway",
+    "discord",
+    "websocket",
+    "bot"
+  ],
+  "author": "Av32000",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.13.0"
+  }
+}
