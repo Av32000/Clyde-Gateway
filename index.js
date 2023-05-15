@@ -1,4 +1,5 @@
 const ws = require('ws');
+const { Intents } = require("./src/Intents")
 
 class Client {
   finalIntents = 0
@@ -82,5 +83,6 @@ class Client {
 }
 
 module.exports = {
-  Client
+  Client,
+  Intents
 }
