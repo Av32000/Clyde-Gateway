@@ -18,6 +18,15 @@ bot.on('READY', message => {
 });
 ```
 
+Once connected, you can update your bot's status with the updatePresence() method:
+
+```js
+bot.on("READY", m => {
+    console.log(m);
+    bot.updatePresence("dnd", {name: "Activity Name", type: ActivityType.GAME})
+})
+```
+
 ## Contributions
 
 All contributions are welcome! Thank you to everyone who will open issues and pull requests to participate in the project. You are free to propose corrections/improvements as well as feature additions!
