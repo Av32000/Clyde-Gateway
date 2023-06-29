@@ -27,7 +27,6 @@ class Client {
 
     this.gateway.on("message", (message) => {
       const json = JSON.parse(message.toString());
-      console.log(json);
       if (json.op === 10) {
         this.hearthbeat = json.d.heartbeat_interval;
         this.StartHearthbeat();
