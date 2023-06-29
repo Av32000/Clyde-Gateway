@@ -21,11 +21,33 @@ bot.on('READY', message => {
 Once connected, you can update your bot's status with the updatePresence() method:
 
 ```js
-bot.on("READY", m => {
-    console.log(m);
-    bot.updatePresence("dnd", {name: "Activity Name", type: ActivityType.GAME})
-})
+bot.on('READY', message => {
+	console.log(`${message.user.username} is ready !`);
+	bot.updatePresence('dnd', { name: 'Activity Name', type: ActivityType.GAME });
+});
 ```
+
+You can also fetch guild members with the getGuildMembers() method :
+
+```js
+bot.on('READY', message => {
+	console.log(`${message.user.username} is ready !`);
+	bot.getGuildMembers({ guildId: '1047980487928467476' }, members => {
+		members.forEach(member => {
+			console.log(member);
+		});
+	});
+});
+```
+
+The getGuildMembers() method accepts the following arguments :
+
+- `searchObject` [Required] [Object] :
+  - `guildId` [Required] [String]: ID of the guild to get members for
+  - `query` [String]: String that username starts with (All members if is null)
+  - `limit` [Integer]: Maximum number of members to send matching the query (All members if is null)
+  - `user_ids` [Array of String]: Used to specify which users you wish to fetch (All members if is null)
+- `callback` [Required] [Function] : Function to call once all members have been retrieved, taking the list obtained as arguments
 
 ## Contributions
 

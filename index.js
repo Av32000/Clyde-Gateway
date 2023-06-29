@@ -9,6 +9,8 @@ class Client {
   properties = {};
   token = "";
   callbacks = [];
+  getGuildMembersCallback = null;
+  members = []
 
   constructor(token, intents, properties) {
     if (!Array.isArray(intents)) {
@@ -25,6 +27,7 @@ class Client {
 
     this.gateway.on("message", (message) => {
       const json = JSON.parse(message.toString());
+      console.log(json);
       if (json.op === 10) {
         this.hearthbeat = json.d.heartbeat_interval;
         this.StartHearthbeat();
@@ -34,6 +37,16 @@ class Client {
             element.callbacks.forEach((callback) => {
               callback(json.d);
             });
+          }
+          if (json.t == "GUILD_MEMBERS_CHUNK") {
+            if (json.d.chunk_index == 0) this.members = []
+            json.d.members.forEach(member => {
+              member.presence = json.d.presences.find(obj => obj.user.id === member.user.id)
+              this.members.push(member)
+            })
+            if (json.d.chunk_index + 1 == json.d.chunk_count) {
+              this.getGuildMembersCallback(this.members)
+            }
           }
         });
       }
@@ -81,6 +94,22 @@ class Client {
           activities: [activity],
           status: status,
           afk: afk,
+        },
+      })
+    );
+  }
+
+  getGuildMembers({ guildId, query, limit, user_ids }, callback) {
+    this.getGuildMembersCallback = callback
+    this.gateway.send(
+      JSON.stringify({
+        op: 8,
+        d: {
+          guild_id: guildId,
+          query: query || "",
+          limit: limit || 0,
+          user_ids: user_ids || null,
+          presences: true
         },
       })
     );
