@@ -9,9 +9,14 @@
     "websocket",
     "bot"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:Av32000/Clyde-Gateway.git"
+  },
   "author": "Av32000",
   "license": "ISC",
   "dependencies": {
     "ws": "^8.13.0"
-  }
+  },
+  "homepage": "https://github.com/Av32000/Clyde-Gateway#readme"
 }

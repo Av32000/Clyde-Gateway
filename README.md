@@ -1,6 +1,16 @@
 # Clyde Gateway
 
-Clyde gateway is a simple and very light library to connect your bot to the discord gateway.
+[![Downloads](https://img.shields.io/npm/dm/clyde-gateway)](https://www.npmjs.com/package/clyde-gateway) [![Size](https://img.shields.io/bundlephobia/min/clyde-gateway)](https://www.npmjs.com/package/clyde-gateway) [![npm](https://img.shields.io/npm/v/clyde-gateway)](https://www.npmjs.com/package/clyde-gateway)
+
+Clyde gateway is a simple and very light library to connect your bot to the Discord gateway.
+
+## Install
+
+To install Clyde-Gateway, simply run the following command:
+
+```
+npm install clyde-gateway
+```
 
 ## Usage
 
