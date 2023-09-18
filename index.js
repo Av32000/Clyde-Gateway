@@ -84,7 +84,7 @@ class Client {
     if (!exist) this.callbacks.push({ event: event, callbacks: [callback] });
   }
 
-  updatePresence(status, activity, afk = true) {
+  updatePresence(status, activity, afk = false) {
     this.gateway.send(
       JSON.stringify({
         op: 3,
