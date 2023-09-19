@@ -18,8 +18,6 @@ const Intents = {
   GUILD_SCHEDULED_EVENTS: 1 << 16,
   AUTO_MODERATION_CONFIGURATION: 1 << 20,
   AUTO_MODERATION_EXECUTION: 1 << 21,
-}
+};
 
-module.exports = {
-  Intents
-}
+export { Intents };

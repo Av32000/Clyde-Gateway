@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "allowJs": false
+  },
+  "include": ["index.ts", "./src/**/*.ts", "./src/**/*.d.ts"],
+  "exclude": ["node_modules"]
+}

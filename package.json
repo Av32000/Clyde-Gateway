@@ -18,5 +18,9 @@
   "dependencies": {
     "ws": "^8.13.0"
   },
-  "homepage": "https://github.com/Av32000/Clyde-Gateway#readme"
+  "homepage": "https://github.com/Av32000/Clyde-Gateway#readme",
+  "devDependencies": {
+    "@types/ws": "^8.5.5",
+    "typescript": "^5.2.2"
+  }
 }
