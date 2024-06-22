@@ -1,6 +1,6 @@
 {
   "name": "clyde-gateway",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Simple and very small library to connect your bot to the discord gateway",
   "main": "index.js",
   "keywords": [
@@ -16,7 +16,7 @@
   "author": "Av32000",
   "license": "ISC",
   "dependencies": {
-    "ws": "^8.13.0"
+    "ws": "^8.17.1"
   },
   "homepage": "https://github.com/Av32000/Clyde-Gateway#readme"
 }
